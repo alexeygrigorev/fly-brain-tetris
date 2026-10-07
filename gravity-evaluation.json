@@ -1,0 +1,23 @@
+[
+  {
+    "lines": 15,
+    "pieces": 51,
+    "ended": true,
+    "level": 8,
+    "elapsedMs": 224112
+  },
+  {
+    "lines": 9,
+    "pieces": 39,
+    "ended": true,
+    "level": 6,
+    "elapsedMs": 175984
+  },
+  {
+    "lines": 10,
+    "pieces": 44,
+    "ended": true,
+    "level": 7,
+    "elapsedMs": 190832
+  }
+]

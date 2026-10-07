@@ -1,0 +1,23 @@
+[
+  {
+    "seed": 314159,
+    "lines": 3994,
+    "pieces": 10000,
+    "capped": true,
+    "frames": []
+  },
+  {
+    "seed": 271828,
+    "lines": 3998,
+    "pieces": 10000,
+    "capped": true,
+    "frames": []
+  },
+  {
+    "seed": 161803,
+    "lines": 3997,
+    "pieces": 10000,
+    "capped": true,
+    "frames": []
+  }
+]
