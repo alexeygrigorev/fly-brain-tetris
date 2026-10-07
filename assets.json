@@ -1,0 +1,29 @@
+{
+  "version": "v0.1.0",
+  "assets": [
+    {
+      "path": "model.json",
+      "kind": "weights",
+      "sha256": "eb0f1df85d94ba1985d457fbba013f68b7ae5ab4300cd9e50dd18c8f6048514e",
+      "url": "https://github.com/alexeygrigorev/fly-brain-tetris/releases/download/v0.1.0/model.json"
+    },
+    {
+      "path": "connectome.json",
+      "kind": "weights",
+      "sha256": "8d3251c3a4c523de5f1e2e9567e34fa5fcffe3f63384d1ec8bfc266ddf2f248c",
+      "url": "https://github.com/alexeygrigorev/fly-brain-tetris/releases/download/v0.1.0/connectome.json"
+    },
+    {
+      "path": "activity.json",
+      "kind": "weights",
+      "sha256": "da10079836f4271c86898686129d1655c1edfc0dc751e1a3d26873160bd2431e",
+      "url": "https://github.com/alexeygrigorev/fly-brain-tetris/releases/download/v0.1.0/activity.json"
+    },
+    {
+      "path": "sounds/music-original.ogg",
+      "kind": "music",
+      "sha256": "59447bde60b77ac6088fce7ba6907487046ce755a46c97a74803849120bd734a",
+      "url": "https://www.vgmpf.com/Wiki/images/6/6b/03_-_Tetris_-_GB_-_Korobeiniki.ogg"
+    }
+  ]
+}
