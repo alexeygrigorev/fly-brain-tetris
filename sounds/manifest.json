@@ -1,0 +1,65 @@
+[
+  {
+    "name": "move",
+    "prompt": "One short soft 8-bit arcade button blip, single crisp tactile electronic tick, immediate attack, dry, no voice, no music, no ambience.",
+    "duration_seconds": 0.5,
+    "bytes": 8821,
+    "character_cost": "6"
+  },
+  {
+    "name": "rotate",
+    "prompt": "One brief playful 8-bit arcade rotation sound: two rising square-wave notes, crisp and dry, immediate attack, no voice or ambience.",
+    "duration_seconds": 0.5,
+    "bytes": 8821,
+    "character_cost": "6"
+  },
+  {
+    "name": "drop",
+    "prompt": "Short retro arcade hard-drop sound: quick descending electronic swoosh ending in a punchy low digital thud, immediate attack, dry, no voice or music.",
+    "duration_seconds": 0.7,
+    "bytes": 12164,
+    "character_cost": "8"
+  },
+  {
+    "name": "lock",
+    "prompt": "Single short muted arcade block landing click with a tiny bass knock, crisp immediate attack, dry, no voice, no music or background.",
+    "duration_seconds": 0.5,
+    "bytes": 8821,
+    "character_cost": "6"
+  },
+  {
+    "name": "clear",
+    "prompt": "Bright original retro arcade reward sound for clearing a row: four quick ascending chiptune notes and a delicate sparkling finish, immediate attack, no voice or background.",
+    "duration_seconds": 1.0,
+    "bytes": 17180,
+    "character_cost": "11"
+  },
+  {
+    "name": "level",
+    "prompt": "Original short retro arcade level-up fanfare, triumphant rising 8-bit arpeggio, clean dry sound, immediate attack, no voice or background.",
+    "duration_seconds": 1.2,
+    "bytes": 20106,
+    "character_cost": "13"
+  },
+  {
+    "name": "over",
+    "prompt": "Original brief retro arcade game-over sound: three descending chiptune notes ending in a low soft electronic wobble, clean and dry, immediate attack, no voice or background.",
+    "duration_seconds": 1.5,
+    "bytes": 24703,
+    "character_cost": "17"
+  },
+  {
+    "name": "fly",
+    "prompt": "A seamless loop of a small fruit fly buzzing its wings nearby, gentle organic insect wing flutter and soft fluctuating high buzz, isolated dry close-up sound, no voices, no music, no other insects or room ambience.",
+    "duration_seconds": 4.0,
+    "bytes": 65245,
+    "character_cost": "44"
+  },
+  {
+    "name": "fly",
+    "prompt": "Photorealistic close microphone field recording of ONE housefly flying nearby: recognizable coarse raspy bzzzz wingbeats around 180 Hz with many bright harmonics, fluttering and irregular wavering as it hovers and darts closer and farther. A real tiny fly, NOT a bee, mosquito, electric hum, synthesizer, or cartoon. Continuous natural insect flight for eight seconds, isolated quiet background, no speech, no music. Seamlessly loopable.",
+    "duration_seconds": 8.0,
+    "bytes": 129193,
+    "character_cost": "88"
+  }
+]

@@ -1,0 +1,7 @@
+Game: Tetris (Game Boy), 1989
+Track: Korobeiniki / Type A
+Traditional melody; arrangement: Hirokazu Tanaka
+Recording: Doommaster1994, Video Game Music Preservation Foundation
+Source: https://www.vgmpf.com/Wiki/index.php?title=Tetris_(GB)
+Audio: https://www.vgmpf.com/Wiki/images/6/6b/03_-_Tetris_-_GB_-_Korobeiniki.ogg
+Playback loops at 38.58 seconds, excluding subsequent repeats and fadeout.
