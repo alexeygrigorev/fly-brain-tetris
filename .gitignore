@@ -1,0 +1,15 @@
+/model.json
+/connectome.json
+/activity.json
+/demo.html
+/fly-at-controls.html
+/sounds/music-original.ogg
+/data/
+*.log
+*.pid
+*.tmp
+.venv/
+__pycache__/
+node_modules/
+.env
+.env.*

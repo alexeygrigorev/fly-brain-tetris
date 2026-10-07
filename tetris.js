@@ -1,0 +1,15 @@
+'use strict';
+// Board row zero is the bottom; standard 10x20 board and seven tetrominoes.
+const BASE=[[15],[3,3],[7,2],[3,6],[6,3],[7,1],[7,4]];
+function rotate(rows){let w=Math.max(...rows.map(x=>32-Math.clz32(x))),h=rows.length,out=Array(w).fill(0);for(let y=0;y<h;y++)for(let x=0;x<w;x++)if(rows[y]&(1<<x))out[x]|=1<<(h-1-y);return out;}
+const PIECES=BASE.map(rows=>{let out=[],seen=new Set;for(let i=0;i<4;i++){let key=rows.join(',');if(!seen.has(key)){seen.add(key);out.push({rows,width:Math.max(...rows.map(x=>32-Math.clz32(x)))});}rows=rotate(rows);}return out;});
+function rng(seed){let a=seed>>>0;return()=>{a+=0x6D2B79F5;let t=a;t=Math.imul(t^(t>>>15),t|1);t^=t+Math.imul(t^(t>>>7),t|61);return((t^(t>>>14))>>>0)/4294967296;};}
+function bagStream(seed){let r=rng(seed),bag=[];return()=>{if(!bag.length){bag=[0,1,2,3,4,5,6];for(let i=6;i>0;i--){let j=Math.floor(r()*(i+1));[bag[i],bag[j]]=[bag[j],bag[i]];}}return bag.pop();};}
+function fits(board,shape,x,y){for(let j=0;j<shape.rows.length;j++)if(board[y+j]&(shape.rows[j]<<x))return false;return true;}
+function candidates(board,piece){let out=[];PIECES[piece].forEach((shape,rotation)=>{for(let x=0;x<=10-shape.width;x++){let y=20-shape.rows.length;if(!fits(board,shape,x,y))continue;while(y>0&&fits(board,shape,x,y-1))y--;let next=board.slice();for(let j=0;j<shape.rows.length;j++)next[y+j]|=shape.rows[j]<<x;let remaining=next.filter(row=>row!==1023),lines=20-remaining.length;while(remaining.length<20)remaining.push(0);out.push({board:remaining,piece,rotation,x,y,lines,features:features(remaining,lines)});}});return out;}
+function features(board,lines){let heights=Array(10).fill(0),holes=0;for(let x=0;x<10;x++){let found=false;for(let y=19;y>=0;y--){if(board[y]&(1<<x)){if(!found)heights[x]=y+1;found=true;}else if(found)holes++;}}let bump=0,wells=0;for(let x=0;x<10;x++){if(x<9)bump+=Math.abs(heights[x]-heights[x+1]);let depth=Math.max(0,Math.min(x?heights[x-1]:20,x<9?heights[x+1]:20)-heights[x]);wells+=depth*(depth+1)/2;}return[heights.reduce((a,b)=>a+b,0)/200,holes/200,bump/180,Math.max(...heights)/20,wells/210,lines/4];}
+function effectiveWeights(readout,transform){return Array.from({length:6},(_,j)=>readout.reduce((s,w,i)=>s+w*transform[i][j],0));}
+function choose(options,weights){let best=null,value=-Infinity;for(let o of options){let v=o.features.reduce((s,f,i)=>s+f*weights[i],0);if(v>value){value=v;best=o;}}return best;}
+function play(weights,seed,limit=1000,record=false,random=false){let nextPiece=bagStream(seed),r=rng(seed+9128),board=Array(20).fill(0),lines=0,frames=[],placed=0;for(;placed<limit;placed++){let p=nextPiece(),opts=candidates(board,p);if(!opts.length)break;let move=random?opts[Math.floor(r()*opts.length)]:choose(opts,weights);board=move.board;lines+=move.lines;if(record)frames.push({board:board.slice(),piece:p,rotation:move.rotation,x:move.x,y:move.y,cleared:move.lines,totalLines:lines});}return{seed,lines,pieces:placed,capped:placed===limit,frames};}
+const API={PIECES,rng,bagStream,candidates,features,effectiveWeights,choose,play};
+if(typeof module!=='undefined')module.exports=API;else window.FlyTetris=API;
