@@ -18,9 +18,9 @@ Open http://127.0.0.1:8765 in Chrome. Click **Sound on** at the top to enable au
 
 The generated HTML is self-contained and can also be opened offline. `PORT=8766 npm start` selects another port (PowerShell: `$env:PORT=8766; npm start`). The server only exposes the generated demo pages and binds to localhost by default.
 
-## Release assets
+## Model artifacts
 
-The [v0.1.0 release](https://github.com/alexeygrigorev/fly-brain-tetris/releases/tag/v0.1.0) contains:
+The following files are committed in the repository and also available in the [v0.1.0 release](https://github.com/alexeygrigorev/fly-brain-tetris/releases/tag/v0.1.0):
 
 | File | Contents |
 | --- | --- |
@@ -28,7 +28,7 @@ The [v0.1.0 release](https://github.com/alexeygrigorev/fly-brain-tetris/releases
 | `connectome.json` | Compiled 32×6 transform, pseudoinverse, input/output neuron IDs, graph provenance |
 | `activity.json` | Response basis and annotated positions for 1,000 sampled neurons |
 
-`npm run setup` downloads these files and the original music. URLs and SHA-256 checksums are pinned in `assets.json`. `npm run weights` and `npm run music` download each group separately. Existing files with different checksums are preserved unless you explicitly pass `--force`, for example `npm run setup -- --force`.
+A fresh clone already includes all three model files. `npm run setup` verifies them and downloads the original music. URLs and SHA-256 checksums are pinned in `assets.json`. `npm run weights` and `npm run music` download each group separately. Existing files with different checksums are preserved unless you explicitly pass `--force`, for example `npm run setup -- --force`.
 
 ## Training and verification
 
